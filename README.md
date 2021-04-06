@@ -6,15 +6,16 @@
 * 안드로이드에서 여러 대의 단말기 등록 후, 테스트 시 단말기를 변경하며 테스트 수행이 가능합니다.
 
 ## 설치방법
-* Java JDK와 Android SDK가 설치되어 있어야 합니다. 
+* Java JDK(8)와 Android SDK가 설치되어 있어야 합니다. 
 * 다운로드 메뉴에서 최신 파일을 다운로드 받습니다. 
 * 세팅 가이드에 따라 설치합니다. 
 
 ## 사용법
+* assembly:assembly 로 빌드 후 생성된 "WebKuli-1.8.0-jar-with-dependencies.jar" 파일을 수행합니다. 
+* 예) java -jar WebKuli-1.8.0-jar-with-dependencies.jar 
+* localhost:80 으로 접속 후 테스트 코드를 작성 및 수행합니다. 
 
-
-## 키워드
-
-
-## 문의사항
+## 지원 버전 
+* Selendroid 0.17.0
+* Selenium 2.46.0
 
