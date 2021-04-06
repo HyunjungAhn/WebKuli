@@ -1,0 +1,13 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_locators.html|
+
+!|getText|id1|this is the first element|
+
+!|getAttribute|id1@class|a1|
+
+!|getText|name1|this is the second element|
+
+!|getAttribute|name1@class|a2|
+
+!|stopTest|

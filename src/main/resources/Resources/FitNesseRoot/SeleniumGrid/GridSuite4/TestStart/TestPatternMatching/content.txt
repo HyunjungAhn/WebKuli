@@ -1,0 +1,21 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_verifications.html|
+
+!|getValue|theText|^[\s\S]*text[\s\S]*$|
+
+!|getValue|theHidden|^[\s\S]* hidden value$|
+
+!|getText|theSpan|^[\s\S]* span$|
+
+!|getSelectedLabel|theSelect|^second [\s\S]*$|
+
+!|getSelectOptions|theSelect|^first[\s\S]*,second[\s\S]*,third[\s\S]*$|
+
+!|getAttribute|theText@class|^[\s\S]oo$|
+
+!|getValue|theTextarea|^Line 1[\s\S]*$|
+
+!|getValue|theText|^[a-z ]+$|
+
+!|stopTest|

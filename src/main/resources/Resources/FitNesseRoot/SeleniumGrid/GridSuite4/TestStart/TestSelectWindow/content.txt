@@ -1,0 +1,17 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_select_window.html|
+
+!|click|popupPage|
+
+!|waitForPopUp|myPopupWindow|5000|
+
+!|selectWindow|name=myPopupWindow|
+
+!|getLocation|^[\s\S]*/tests/html/test_select_window_popup\.html$|
+
+!|getTitle|Select Window Popup|
+
+!|getAllWindowNames|^[\s\S]*,[\s\S]*$|
+
+!|stopTest|

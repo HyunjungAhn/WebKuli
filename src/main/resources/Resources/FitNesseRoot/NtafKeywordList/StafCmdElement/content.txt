@@ -1,0 +1,33 @@
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!3 Service Command List
+
+!*****> Delay Service : Delay (or sleep) a number of milliseconds.
+ * Syntax
+  * DELAY <Milliseconds>
+  * HELP
+**********!
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|DELAY|local|DELAY 3000|0|||
+|DELAY|local|HELP|0|||
+!*****> Echo Service : Echo a return string from other STAF clients.
+ * Syntax
+  * ECHO <Message>
+  * HELP
+**********!
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+
+!*****> Ping Service : Allows you to ping other STAF clients.
+ * Syntax
+  * PING [MACHINE <Machine>]
+  * HELP
+**********!
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+|PING|local|HELP|0|||

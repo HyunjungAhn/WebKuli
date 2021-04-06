@@ -1,0 +1,11 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_funky_event_handling.html|
+
+!|click|clickMe|
+
+!|sleep|1000|
+
+!|isTextPresent|You shouldn§t be here!|false|
+
+!|stopTest|

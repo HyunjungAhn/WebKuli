@@ -1,0 +1,25 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_verifications.html|
+
+!|getLocation|^[\s\S]*/tests/html/test_verifications\.html[\s\S]*$|
+
+!|getValue|theText|the text value|
+
+!|getValue|theText|@not the text value|
+
+!|getValue|theHidden|the hidden value|
+
+!|getText|theSpan|this is the span|
+
+!|isTextPresent|this is the span|true|
+
+!|getTable|theTable.0.0|th1|
+
+!|getTable|theTable.1.0|a|
+
+!|getTable|theTable.2.1|d|
+
+!|getSelectedValue|theSelect|option2|
+
+!|stopTest|

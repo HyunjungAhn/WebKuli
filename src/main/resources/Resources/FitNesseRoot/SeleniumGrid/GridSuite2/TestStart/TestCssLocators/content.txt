@@ -1,0 +1,25 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_locators.html|
+
+!|isElementPresent|css=*|true|
+
+!|getText|css=p|this is the first element in the document|
+
+!|getText|css=a|this is the first element|
+
+!|getText|css=a#id3|this is the third element|
+
+!|isElementPresent|css=input[name]|true|
+
+!|getText|css=a[href="#id3"]|this is the third element|
+
+!|isElementPresent|css=span[selenium:foo]|false|
+
+!|getText|css=a[class~="class2"]|this is the fifth element|
+
+!|stopTest|
+
+!|end_iterate|

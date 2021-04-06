@@ -1,0 +1,15 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_store_value.html|
+
+!|type|theText|1:2:3:4:5|
+
+!|getValue|theText|1:2:3:4:5|
+
+!|getEval|function square(n) {return n * n;}; "25 * 25 = " + square(25);|=$expr$|
+
+!|type|theText|$expr$|
+
+!|getValue|theText|^25 [\s\S]* 25 = 625$|
+
+!|stopTest|

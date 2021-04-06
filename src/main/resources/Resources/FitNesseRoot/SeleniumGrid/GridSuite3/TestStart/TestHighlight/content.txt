@@ -1,0 +1,7 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_locators.html|
+
+!|highlight|id1|
+
+!|stopTest|

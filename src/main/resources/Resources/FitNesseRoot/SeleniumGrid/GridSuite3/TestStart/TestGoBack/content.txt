@@ -1,0 +1,19 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_click_page1.html|
+
+!|getTitle|Click Page 1|
+
+!|click|link|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|goBack|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page 1|
+
+!|stopTest|

@@ -1,0 +1,16 @@
+#!define debug {1044}
+
+!2 !-DoFixture-!
+'''!- DoFixture -!'''!- can be used to describe story-like tests, almost in plain English. It is a much more efficient replacement for -!'''!- ActionFixture -!'''!- and also has some great features like flow-mode coordination (see -![[!-Flow Mode-!][<UserGuide.FixtureGallery.ImportantConcepts.FlowMode]]!-) and wrapping domain objects (see -![[!-System under test-!][<UserGuide.FixtureGallery.ImportantConcepts.SystemUnderTest]]!-). -!
+
+# section Table Format
+!3 !-Table Format-!
+!- The first row of the table lists the fixture class name. All rows after that are used to execute verifications or perform actions by executing methods of the fixture class. The method name is constructed by joining odd cells in the row. Argument values are taken from even cells. -!
+
+!- If the method returns a -!'''!- boolean -!'''!- value, the row is considered to be a test and returning -!'''!- FALSE -!'''!- will make the test fail. If the method is -!'''!- void -!'''!- or returns something other than a -!'''!- boolean -!'''!- value, then it is just executed without any effect on the outcome of the test unless an exception is thrown. -!
+
+!|DoFixtureTest|
+|fill|10|times with|x|
+|char at|4|is|x|
+|set list|A,B,C,D|
+|char at|2|is|C|

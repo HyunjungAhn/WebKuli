@@ -1,0 +1,11 @@
+!2 !-CalculateFixture-!
+'''!- CalculateFixture -!'''!- is used to verify the result of one or more calculations for different combinations of input arguments. It does the same job as -!'''!- ColumnFixture -!'''!- in a different table format and with lot less code in the fixture class. -!
+
+# section Table Format
+!3 !-Table Format-!
+!- The first row of the table is the fixture class name. After that, the second row contains names for input parameters, followed by an empty cell, then followed by names of calculations (output values). All rows after that specify values for input parameters and expected outcomes for calculations. An empty cell is again used to separate inputs from expected outputs. -!
+
+!|CalculateFixtureTest|
+|firstPart|secondPart||together|
+|Hello|World||Hello, World|
+|Houston|We Have a Problem||Houston, We Have a Problem|

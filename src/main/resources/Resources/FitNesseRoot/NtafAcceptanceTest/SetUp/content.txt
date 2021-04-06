@@ -1,0 +1,2 @@
+!|com.nhncorp.ntaf.Import|
+|eg|

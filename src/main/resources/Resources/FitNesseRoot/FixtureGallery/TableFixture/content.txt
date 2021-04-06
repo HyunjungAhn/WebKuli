@@ -1,0 +1,15 @@
+!2 !-TableFixture-!
+'''!- TableFixture -!'''!- is an additional class in the FitNesse package (it does not exist in the core FIT fixture set, but is distributed as part of the same library with FitNesse). It is used to execute free-form tables that do not have a repetitive structure. -!
+
+# section Table Format
+!3 !-Table Format-!
+!- With -!'''!- TableFixture -!'''!-, you decide what the format is and which cells are actually used as part of the test. The only limitation is that the first row has to point to the class name of your fixture. The rest is up to you. This class can be used to turn existing invoices, reports or documents into FitNesse tests. In this example, borrowed from -![[!-Test Driven .NET Development with FitNesse-!][http://gojko.net/fitnesse/book]] !-, we use an invoice to verify the tax calculation. -!
+
+!|TableFixtureTest|
+|Item|Product code|Price|
+|Pragmatic Programmer|B978-0201616224|34.03|
+|Sony RDR-GX330|ERDR-GX330|94.80|
+|Test Driven Development By Example|B978-0321146533|32.39|
+|Net Total||161.22|
+|Tax (10% on applicable items)||9.48|
+|Total||170.70|

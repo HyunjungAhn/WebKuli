@@ -1,0 +1,13 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_element_order.html|
+
+!|getElementIndex|d2|1|
+
+!|getElementIndex|d1.1.1|0|
+
+!|getElementIndex|d2|1|
+
+!|getElementIndex|d1.2|5|
+
+!|stopTest|

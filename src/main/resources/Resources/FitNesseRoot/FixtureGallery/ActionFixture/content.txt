@@ -1,0 +1,15 @@
+!2 !-ActionFixture-!
+'''!- ActionFixture -!'''!- was originally intended for workflow-style tests that are not repetitive. It uses a UI metaphor to automate other fixtures. -!
+
+# section Table Format
+!3 !-Table Format-!
+!- The first row of an -!'''!- ActionFixture -!'''!- table always initialises the fixture class, in this case the -!'''!- ActionFixture -!'''!- itself and not a custom subclass. All rows after the first begin with a command cell, followed by command arguments in the remaining cells. Some rows will have two and some will have three cells. The second row is typically used for the -!'''!- start -!'''!- command, which expects one argument &mdash; the class name for the actual fixture to automate. After that, you can use the following commands to describe the test: -!
+
+!- <ul> -!!- <li> -!'''!- check -!'''!- &mdash; executes a method and verifies its value. -!!- </li> -!!- <li> -!'''!- press -!'''!- &mdash; executes a -!'''!- void -!'''!- method without testing anything. -!!- </li> -!!- <li> -!'''!- enter -!'''!- &mdash; executes a method and passes an argument to it. -!!- </li> -!!- </ul> -!!- You can imagine an -!'''!- ActionFixture -!'''!- as an automation tool to populate UI forms and click on buttons that are connected to methods. -!
+
+!|ActionFixtureTest|
+|start|ActionFixtureTest|
+|enter|firstPart|Hello|
+|enter|secondPart|World|
+|press|join|
+|check|together|Hello, World|

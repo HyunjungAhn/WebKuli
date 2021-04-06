@@ -1,0 +1,25 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_locators.html|
+
+!|getText|xpath=//a|this is the first element|
+
+!|getText|xpath=//a[@class='a2']|this is the second element|
+
+!|getText|xpath=//*[@class='a2']|this is the second element|
+
+!|getText|xpath=//a[2]|this is the second element|
+
+!|getText|xpath=//a[position()=2]|this is the second element|
+
+!|isElementPresent|xpath=//a[@href='foo']|false|
+
+!|getAttribute|xpath=//a[contains(@href,'#id1')]/@class|a1|
+
+!|assignId|xpath=//*[text()='right']|rightButton|
+
+!|isElementPresent|rightButton|true|
+
+!|getXpathCount|id("nested1")/div[1]//input|2|
+
+!|stopTest|

@@ -1,0 +1,3 @@
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|service name|target|service parameter|return code|response string|error string|

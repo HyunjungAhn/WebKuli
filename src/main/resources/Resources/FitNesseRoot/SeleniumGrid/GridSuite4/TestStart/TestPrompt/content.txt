@@ -1,0 +1,23 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_prompt.html|
+
+!|isPromptPresent|false|
+
+!|answerOnNextPrompt|no|
+
+!|click|promptAndLeave|
+
+!|isPromptPresent|true|
+
+!|getPrompt|Type 'yes' and click OK|
+
+!|answerOnNextPrompt|yes|
+
+!|click|promptAndLeave|
+
+!|waitForPageToLoad|30000|
+
+!|getPrompt|^[\s\S]*'yes'[\s\S]*$|
+
+!|stopTest|

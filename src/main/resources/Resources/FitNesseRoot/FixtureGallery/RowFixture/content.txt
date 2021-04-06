@@ -1,0 +1,11 @@
+!2 !-RowFixture-!
+'''!- RowFixture -!'''!- tests dynamic lists of objects. It will compare the expected list (FitNesse table) with the actual result (from fixture code) and report any additional or missing items. -!
+
+# section Table Format
+!3 !-Table Format-!
+!- The first row of the table is the fixture class name. The second row describes the structure of objects in the list (the properties or methods that you want to verify). All rows after that describe expected objects in the array. -!
+
+!|eg.info.fitnesse.fixturegallery.RowFixtureTest|
+|name|post code|
+|John Smith|SW4 66Z|
+|Michael Jordan|NE1 8AT|

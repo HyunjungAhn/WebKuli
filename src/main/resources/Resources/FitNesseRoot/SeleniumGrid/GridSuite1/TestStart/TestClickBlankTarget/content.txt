@@ -1,0 +1,17 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}Frames.html|
+
+!|selectFrame|bottomFrame|
+
+!|click|changeBlank|
+
+!|waitForPopUp|_blank|10000|
+
+!|selectWindow|_blank|
+
+!|stopTest|
+
+!|end_iterate|

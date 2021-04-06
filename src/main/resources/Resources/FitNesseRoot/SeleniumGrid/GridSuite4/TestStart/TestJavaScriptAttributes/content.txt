@@ -1,0 +1,9 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_javascript_attributes.html|
+
+!|click|//a[@href="#"]|
+
+!|getAlert|foo|
+
+!|stopTest|

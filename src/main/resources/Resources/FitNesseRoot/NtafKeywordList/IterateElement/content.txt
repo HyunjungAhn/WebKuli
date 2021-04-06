@@ -1,0 +1,51 @@
+#!define COMMAND_PATTERN {java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=1044 -cp %p %m}
+
+!3 Iterate
+
+!*****> iterate: Iterate a List and Run Each Iteration In Sequence
+
+The iterate element contains a single task element. The iterate element performs the task for each value in a list. The iterations of the contained task element are executed serially (unlike the paralleliterate element whose tasks are performed in parallel). The iterate element has the following attributes:
+
+ * var - is the name of the variable which will contain the current item in the list/tuple being iterated. It is a literal and is required.
+ * in - is the list to be iterated. It is required. 
+ * indexvar - is the name of the variable which will contain the index of the current item in the list being iterated. It is a literal and is optional. Note that the index for the first element in the list is 0.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_iterate|{var  :$test$}, {in : aaa, bbb, ccc}, {indexvar : $i$}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $test$|0|$test$||
+
+|start_if|{expr: $test$ == bbb}|
+
+|command_break|
+
+|end_if|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $test$|0|$test$||
+
+|end_iterate|
+
+|start_iterate|{var  :$test$}, {in : aaa, bb b}, {indexvar : $i$}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $test$|0|$test$||
+
+|end_iterate|
+
+|start_iterate|{var  :$test$}, {in : "  aaa ", "bb b  ", "ccc"}, {indexvar : $i$}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $test$|0|$test$||
+
+|end_iterate|

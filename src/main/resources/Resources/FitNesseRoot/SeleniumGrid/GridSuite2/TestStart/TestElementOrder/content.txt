@@ -1,0 +1,9 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_element_order.html|
+
+!|isOrdered|s1.1|d1.1|true|
+
+!|isOrdered|d1.1|s1.1|false|
+
+!|stopTest|

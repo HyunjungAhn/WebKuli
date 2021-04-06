@@ -1,0 +1,35 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_click_javascript_page.html|
+
+!|click|id=link|
+
+!|getAlert|link clicked: foo|
+
+!|click|id=linkWithMultipleJavascriptStatements|
+
+!|getAlert|alert1|
+
+!|getAlert|alert2|
+
+!|getAlert|alert3|
+
+!|click|id=linkWithJavascriptVoidHref|
+
+!|getAlert|onclick|
+
+!|getTitle|Click Page 1|
+
+!|click|id=linkWithOnclickReturnsFalse|
+
+!|getTitle|Click Page 1|
+
+!|click|enclosedImage|
+
+!|getAlert|enclosedImage clicked|
+
+!|stopTest|
+
+!|end_iterate|

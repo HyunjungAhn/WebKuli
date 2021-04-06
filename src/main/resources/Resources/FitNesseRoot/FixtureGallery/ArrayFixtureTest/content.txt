@@ -1,0 +1,11 @@
+!2 !-ArrayFixture-!
+'''!- ArrayFixture -!'''!- was built as a replacement for -!'''!- RowFixture -!'''!-. It works very similar to that other fixture type, with two main differences:-!
+
+!- <ol> -!!- <li> -!!-Element order is important for -!'''!- ArrayFixture -!'''!-.-!!- </li> -!!- <li> -!'''!- ArrayFixture -!'''!- can work with generic collections as well as with arrays.-!!- </li> -!!- </ol> -!# section Table Format
+!3 !-Table Format-!
+!- The first row of the table should list the fixture class name. The second row lists the structure of collection elements &mdash; names of fields, properties and methods. -!
+
+!|ArrayFixtureTest|
+|name|post code|credit limit|
+|John Smith|SW4 66Z|10|
+|Michael Jordan|NE1 8AT|12|

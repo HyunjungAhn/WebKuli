@@ -1,0 +1,4 @@
+!|SetUpFixtureTest|
+|player|post code|balance|
+|John Smith1111|SW4 66Z|10.00|
+|Michael Jordan|NE1 8AT|12.00|

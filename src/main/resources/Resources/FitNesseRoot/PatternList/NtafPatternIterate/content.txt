@@ -1,0 +1,7 @@
+!|start_iterate|{var : $var$}, {in : aaa, bbb, ccc}, {indexvar : $i$}|
+
+!|command_continue|$var$ == aaa|
+
+!|command_break|$var$ == bbb|
+
+!|end_iterate|

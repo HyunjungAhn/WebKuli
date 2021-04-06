@@ -1,0 +1,11 @@
+!|get|
+
+!|findElement|input|id|
+
+!|setText|
+
+!|findElement|input|xpath|
+
+!|click|
+
+!|findElement|a|linkText|

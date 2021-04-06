@@ -1,0 +1,13 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_rich_text.html|
+
+!|selectFrame|richtext|
+
+!|getText|//body||
+
+!|type|//body|hello world|
+
+!|getText|//body|hello world|
+
+!|stopTest|

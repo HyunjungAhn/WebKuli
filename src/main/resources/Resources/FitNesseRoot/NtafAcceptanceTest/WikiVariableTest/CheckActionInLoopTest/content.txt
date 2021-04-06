@@ -1,0 +1,21 @@
+조건1 : 반복문 안의 DoFixture의 check는 반복수 만큼 결과를 표출해야 한다.
+
+!|start_loop|{var : $var$}, {while: $var$ < 3}|
+
+!|check|returnOutput|$var$|
+
+!|end_loop|
+
+!|start_loop|{var : $var$}, {while: $var$ < 3}|
+
+!|check|returnZero|0|
+
+!|end_loop|
+
+조건2 : 반복문 안의 DoFixture의 check에서 할당을 했을 경우 반복 만큼 할당한 값이 표출 되어야 한다.
+
+!|start_loop|{var : $var$}, {while: $var$ < 3}|
+
+!|check|returnOutput|=$var2$|
+
+!|end_loop|

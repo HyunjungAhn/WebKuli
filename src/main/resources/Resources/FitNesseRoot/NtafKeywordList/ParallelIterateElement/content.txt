@@ -1,0 +1,81 @@
+!3 Paralleliterate
+
+!*****> Paralleliterate : Run a Task for Each Entry in a List in Parallel
+
+The paralleliterate element contains a single task element. The paralleliterate element performs the task for each value in a list. The iterations of the contained task element are executed in parallel (unlike the iterate element whose tasks are performed serially). Each iteration will be executed on a separate STAX-Thread and existing variables are cloned for each thread. The paralleliterate element is considered to be complete when all its iterations of the task element have completed. The paralleliterate element has the following attributes:
+
+ * var - is the name of the variable which will contain the current item in the list/tuple being iterated. It is a literal and is required.
+ * in - is the list to be iterated. It is required. 
+ * indexvar - is the name of the variable which will contain the index of the current item in the list being iterated. It is a literal and is optional. Note that the index for the first element in the list is 0.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_paralleliterate|{var: $machName$}, {in: local, local, local}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|$machName$|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|$machName$|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|$machName$|PING|0|PONG||
+
+|end_paralleliterate|
+
+
+|start_paralleliterate|{var: $echoWord$}, {in: aaa, bbb, ccc}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+|end_paralleliterate|
+
+|start_paralleliterate|{var: $echoWord$}, {in: aa a, bbb  ,   ccc}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+|end_paralleliterate|
+
+|start_paralleliterate|{var: $echoWord$}, {in: "aa a  ", "bbb  ",   "ccc"}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO $echoWord$|0|$echoWord$||
+
+|end_paralleliterate|
+

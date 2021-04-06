@@ -1,0 +1,31 @@
+!|FlowFixture|
+
+|command_var|$response1$=0|
+
+|command_var|$response2$=0|
+
+|command_var|$response3$=0|
+
+|start_parallel|
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO aaa|0|$response1$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO bbb|0|$response2$||
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO ccc|0|$response3$||
+
+|end_parallel|
+
+|assertEquals|aaa|$response1$|
+
+|assertEquals|bbb|$response2$|
+
+|assertEquals|ccc|$response3$|
+
+|clearSymbols|

@@ -1,0 +1,46 @@
+!3 If
+
+!*****> if / elseif / else: Select a Task To Perform
+
+The if element specifies a conditional. It allows you to specify a task to execute if an expression is evaluated to be true. It allows optional elseif elements and an optional else element to be performed if the expression is evaluated to be false. The if, else, and elseif elements may contain a single task element.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|PING|local|PING|$RC$|PONG||
+
+|start_if|{expr: $RC$ == 1}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_if|
+
+|start_elseif|{expr: $RC$ == 1}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_elseif|
+
+|start_elseif|{expr: $RC$ == 0}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_elseif|
+
+|start_else|
+
+|command_log|Echo Test fail!(RC = $RC$)|
+
+|end_else|
+

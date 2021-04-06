@@ -1,0 +1,17 @@
+!|FlowFixture|
+
+|command_var|$COUNT$=0|
+
+|start_iterate|{var  :$test$}, {in : 5, 10, 15}|
+
+|start_loop|{var: $i$}, {from:0}, {while: $i$ < $test$}|
+
+|command_var|$COUNT$++|
+
+|end_loop|
+
+|end_iterate|
+
+|command_var|$COUNT$|
+
+|assertEquals|30|$COUNT$|

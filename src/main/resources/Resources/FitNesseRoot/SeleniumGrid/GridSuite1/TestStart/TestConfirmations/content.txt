@@ -1,0 +1,35 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_confirm.html|
+
+!|chooseCancelOnNextConfirmation|
+
+!|click|id=confirmAndLeave|
+
+!|isConfirmationPresent|true|
+
+!|getConfirmation|You are about to go to a dummy page.|
+
+!|getTitle|Test Confirm|
+
+!|click|id=confirmAndLeave|
+
+!|waitForPageToLoad|3000|
+
+!|getConfirmation|^[\s\S]*dummy page[\s\S]*$|
+
+!|getTitle|Dummy Page|
+
+!|open|${URL_PREFIX}test_confirm.html|
+
+!|getTitle|Test Confirm|
+
+!|chooseCancelOnNextConfirmation|
+
+!|chooseOkOnNextConfirmation|
+
+!|stopTest|
+
+!|end_iterate|

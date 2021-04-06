@@ -1,0 +1,17 @@
+!|ListParameterTest|
+
+!|addList|1|
+|addList|2|
+|addList|3|
+
+!|check|returnList|1, 2, 3|
+
+!|check|returnList|=$list$|
+
+!|command_var|$list$|
+
+!|setList|$list$|
+
+!|setList|4, 5|
+
+!|check|getList|4, 5|

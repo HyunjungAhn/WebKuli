@@ -1,0 +1,7 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}Frames.html|
+
+!|selectFrame|mainFrame|
+
+!|stopTest|

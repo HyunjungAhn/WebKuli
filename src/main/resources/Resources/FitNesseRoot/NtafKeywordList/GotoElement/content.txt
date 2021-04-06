@@ -1,0 +1,36 @@
+#!define debug {1044}
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|command_goto|second|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World 1|0|Hello World 1||
+
+|command_label|first|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World 2|0|Hello World 2||
+
+|command_exit|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World 3|0|Hello World 3||
+
+|command_label|second|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World 4|0|Hello World 4||
+
+|command_goto|first|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World 5|0|Hello World 5||

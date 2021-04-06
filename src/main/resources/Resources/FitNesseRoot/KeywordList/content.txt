@@ -1,0 +1,23 @@
+!3 !-NTAF WebKit favorite keyward lists.-!
+
+!|startTest|
+
+!|open|
+
+!|click|
+
+!|isAlertPresent|
+
+!|isElementPresent|
+
+!|getAlert|
+
+!|waitForPageToLoad|
+
+!|getText|
+
+!|getValue|
+
+!|getTitle|
+
+!|stopTest|

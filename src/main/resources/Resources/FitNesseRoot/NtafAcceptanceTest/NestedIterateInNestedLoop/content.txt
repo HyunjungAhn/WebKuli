@@ -1,0 +1,25 @@
+!|FlowFixture|
+
+|command_var|$COUNT$=0|
+
+|start_loop|{var: $i$}, {from:0}, {while: $i$ < 5}|
+
+|start_iterate|{var  :$first$}, {in : aaa, bbb, ccc}|
+
+|start_loop|{var: $j$}, {from:0}, {while: $j$ < 5}|
+
+|start_iterate|{var  :$second$}, {in : aaa, bbb, ccc}|
+
+|command_var|$COUNT$++|
+
+|end_iterate|
+
+|end_loop|
+
+|end_iterate|
+
+|end_loop|
+
+|command_var|$COUNT$|
+
+|assertEquals|225|$COUNT$|

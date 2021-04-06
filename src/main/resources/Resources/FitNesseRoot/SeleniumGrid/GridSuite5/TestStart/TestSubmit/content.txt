@@ -1,0 +1,17 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_submit.html|
+
+!|submit|searchForm|
+
+!|getAlert|onsubmit called|
+
+!|checked|okayToSubmit|
+
+!|submit|searchForm|
+
+!|getAlert|onsubmit called|
+
+!|getAlert|form submitted|
+
+!|stopTest|

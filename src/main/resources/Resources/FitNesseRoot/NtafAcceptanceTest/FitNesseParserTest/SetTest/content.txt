@@ -1,0 +1,15 @@
+!|SetParameterTest|
+
+!|addSet|1|
+|addSet|2|
+|addSet|3|
+
+!|check|returnSet|1, 2, 3|
+
+!|check|returnSet|=$set$|
+
+!|command_var|$set$|
+
+!|setSet|$set$|
+
+!|setSet|4, 5|

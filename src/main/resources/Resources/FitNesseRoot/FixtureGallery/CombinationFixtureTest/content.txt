@@ -1,0 +1,11 @@
+!2 !-CombinationFixture-!
+'''!- CombinationFixture -!'''!- is used to perform an operation on pairs on values. The values are specified in a row and a column and the operation is performed on all combinations of values. -!
+
+# section Table Format
+!3 !-Table Format-!
+!- The first row of the table is the fixture class name. The second row contains an empty cell followed by cells containing the values to be used as the second parameter for the operation. All subsequent rows contain a value in the first cell to be used as the first parameter for the operation, followed by cells containing the expected value of the operation. -!
+
+!|CombinationFixtureTest|
+|  |1 |2|3|
+|6 |6 |3|2|
+|12|12|6|4|

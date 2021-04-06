@@ -1,0 +1,33 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}path1/cookie1.html|
+
+!|deleteAllVisibleCookies|
+
+!|getCookie||
+
+!|open|${URL_PREFIX}path2/cookie2.html|
+
+!|deleteAllVisibleCookies|
+
+!|getCookie||
+
+!|open|${URL_PREFIX}path1/cookie1.html|
+
+!|createCookie|addedCookieForPath1=new value1||
+
+!|createCookie|addedCookieForPath2=new value2|path=${URL_PREFIX}path2/, max_age=60|
+
+!|getCookie|addedCookieForPath1=new value1|
+
+!|isCookiePresent|addedCookieForPath1|true|
+
+!|getCookieByName|addedCookieForPath1|new value1|
+
+!|isCookiePresent|testCookie|false|
+
+!|stopTest|
+
+!|end_iterate|

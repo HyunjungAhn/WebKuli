@@ -1,0 +1,27 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_select.html|
+
+!|isSomethingSelected|theSelect|true|
+
+!|getSelectedLabel|theSelect|Second Option|
+
+!|select|theSelect|index=4|
+
+!|getSelectedLabel|theSelect|Fifth Option|
+
+!|getSelectedIndex|theSelect|4|
+
+!|getSelectedLabel|theSelect|Fifth Option|
+
+!|getSelectedLabels|theSelect|Fifth Option|
+
+!|select|theSelect|Third Option|
+
+!|getSelectedLabel|theSelect|Third Option|
+
+!|select|theSelect|label=Fourth Option|
+
+!|getSelectedId|theSelect|o4|
+
+!|stopTest|

@@ -1,0 +1,7 @@
+!|start_loop|{var : $var$}, {while: $var$ < 4}|
+
+!|command_continue|$var$ == 2|
+
+!|command_break|$var$ == 3|
+
+!|end_loop|

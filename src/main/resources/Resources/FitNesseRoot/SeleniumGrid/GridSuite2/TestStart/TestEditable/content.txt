@@ -1,0 +1,11 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_editable.html|
+
+!|isEditable|name=normal_text|true|
+
+!|isEditable|name=normal_select|true|
+
+!|isEditable|disabled_text|false|
+
+!|stopTest|

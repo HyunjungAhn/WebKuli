@@ -1,0 +1,8 @@
+!define HOST {localhost:4444}
+!define URL_PREFIX {http://localhost:8082/files/tests/html/}
+
+!|startHubServer|4444|
+
+!|startRemoteClientServer|*firefox|5500-5502|
+|startRemoteClientServer|*iexplore|9000|
+|startRemoteClientServer|*safari|8000|

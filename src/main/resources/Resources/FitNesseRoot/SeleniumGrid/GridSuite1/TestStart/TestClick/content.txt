@@ -1,0 +1,59 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_click_page1.html|
+
+!|getText|id=link|Click here for next page|
+
+!|click|id=link|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|click|previousPage|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page 1|
+
+!|click|id=linkWithExtraEnclosedImage|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|click|previousPage|
+
+!|waitForPageToLoad|3000|
+
+!|click|id=linkWithEnclosedImage|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|click|previousPage|
+
+!|waitForPageToLoad|3000|
+
+!|click|id=enclosedImage|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|click|previousPage|
+
+!|waitForPageToLoad|3000|
+
+!|click|id=extraEnclosedImage|
+
+!|waitForPageToLoad|3000|
+
+!|getTitle|Click Page Target|
+
+!|stopTest|
+
+!|end_iterate|

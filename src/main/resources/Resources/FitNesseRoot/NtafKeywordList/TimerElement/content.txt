@@ -1,0 +1,33 @@
+!3 Timer
+
+!*****> timer: Define a Task for which Time Control is Provided
+
+The timer element is a wrapper which defines a task for which time control is provided. The timer element contains a single task element and runs
+the task for a specified duration, stopping the task at the end of the specified duration (if the task is still running). The timer element has the following attribute:
+
+ * duration - specifies the maximum length of time to run the task. It is required. The time may be expressed in milliseconds, seconds, minutes, hours, days, weeks, or years. For example:!-
+  * duration="50" specifies 50 milliseconds.
+  * duration="90s" specifies 90 seconds.
+  * duration="5m" specifies 5 minutes.
+  * duration="36h" specifies 36 hours.
+  * duration="3d" specifies 3 days.
+  * duration="1w" specifies 1 week.
+  * duration="1y" specifies 1 year.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_timer|{duration: 1s}|
+
+|start_loop||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+|end_loop|
+
+|end_timer|

@@ -1,0 +1,5 @@
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+|eg|
+
+!|TestDoFixture|

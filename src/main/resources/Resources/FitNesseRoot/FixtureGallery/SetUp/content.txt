@@ -1,0 +1,2 @@
+!|Import|
+|eg.info.fitnesse.fixturegallery|

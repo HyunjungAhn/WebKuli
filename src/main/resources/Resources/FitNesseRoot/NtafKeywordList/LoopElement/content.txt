@@ -1,0 +1,63 @@
+#!define COMMAND_PATTERN {java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=1044 -cp %p %m}
+
+!3 Loop
+
+!*****> loop: Run a Task Repeatedly
+
+The loop element contains a single task element which may be executed a specified number of times, allowing specification of an upper and lower bound with an increment value and where the index counter is available to the contained task element. In addition, specification of a while and/or until expression is allowed. If no constraint attributes (e.g. to, until, or while) are specified for the loop element, then it loops forever. The loop element has the following attributes:
+
+ * var - is the name of the variable which will contain the loop index variable. It is optional.
+ * from - is the starting value of the loop index variable. It defaults to 1 if not specified.
+ * to - is the maximum value of the loop index variable. It is optional.
+ * by - is the increment value for the loop index variable. It defaults to 1 if not specified.
+ * while - is an expression that must evaluate to a boolean value and is performed at the top of each loop. If it evaluates to false, it breaks out of the loop. It is optional.
+ * until - is an expression that must evaluate to a boolean value and is performed at the bottom of each loop. If it evaluates to true, it breaks out of the loop. It is optional.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_loop|{var: $i$}, {while: $i$ < 4}|
+
+|command_var|$i$|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+|start_if|{expr: $i$ == 2}|
+
+|command_break|
+
+|end_if|
+
+|end_loop|
+
+|start_loop|{var: $i$}, {until: $i$ > 4}|
+
+|command_var|$i$|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PING|local|PING|0|PONG||
+
+|end_loop|
+ 

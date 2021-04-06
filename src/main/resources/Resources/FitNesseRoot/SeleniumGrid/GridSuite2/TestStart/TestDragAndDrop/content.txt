@@ -1,0 +1,13 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}slider/example.html|
+
+!|dragAndDrop|id=slider01|800,0|
+
+!|getValue|id=output1|20|
+
+!|dragAndDrop|id=slider01|-800,0|
+
+!|getValue|id=output1|0|
+
+!|stopTest|

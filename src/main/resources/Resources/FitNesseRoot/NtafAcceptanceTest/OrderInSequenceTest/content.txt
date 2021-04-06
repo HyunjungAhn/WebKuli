@@ -1,0 +1,47 @@
+!|FlowFixture|
+
+|command_var|$first_executed$=false|
+
+|command_var|$second_executed$=false|
+
+|command_var|$third_executed$=false|
+
+|start_parallel|
+
+|start_sequence|
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO true|0|$first_executed$||
+
+|assertEquals|true|$first_executed$|
+
+|assertEquals|false|$second_executed$|
+
+|assertEquals|false|$third_executed$|
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO true|0|$second_executed$||
+
+|assertEquals|true|$first_executed$|
+
+|assertEquals|true|$second_executed$|
+
+|assertEquals|false|$third_executed$|
+
+!|StafCmdFixture|
+|service|location|request|submit()|=response()|getErrorMessage()|
+|ECHO|local|ECHO true|0|$third_executed$||
+
+|assertEquals|true|$first_executed$|
+
+|assertEquals|true|$second_executed$|
+
+|assertEquals|true|$third_executed$|
+
+|end_sequence|
+
+|end_parallel|
+
+|clearSymbols|

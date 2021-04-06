@@ -1,0 +1,44 @@
+!3 Break
+
+!*****> Break: Jump out of the Closest Enclosing Loop or Iterate
+
+The break element may be used to break out of a loop or iterate element.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_loop|{var: $i$}, {from: 0}, {to: 3}, {by: 1}|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|$RC$|Hello World||
+
+|start_if|{expr: $RC$ != 0}|
+
+|command_log|short test process failed with RC $RC$, breaking out of loop $i$|
+
+|command_break|
+
+|end_if|
+
+|start_else|
+
+|command_log|short test process completed|
+
+|end_else|
+
+|end_loop|
+
+!4 New break expression.
+|start_loop|{var: $i$}, {from: 0}, {to: 3}, {by: 1}|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|$RC$|Hello World||
+
+|command_break|$i$ >= 1|
+
+|end_loop|

@@ -1,0 +1,11 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_multi_level_frame.html|
+
+!|selectFrame|frame2|
+
+!|selectFrame|theFrame|
+
+!|isTextPresent|Click here for next page via absolute link|true|
+
+!|stopTest|

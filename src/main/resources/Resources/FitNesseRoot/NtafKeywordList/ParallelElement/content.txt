@@ -1,0 +1,28 @@
+!3 Parallel
+
+!*****> Parallel: Run Tasks In Parallel
+
+The parallel element represents a container of task elements which will be executed in parallel. Each task element it contains will be executed on a separate STAX-Thread and existing variables are cloned for each thread. The parallel element is considered to be complete when each of its contained task elements has completed. A parallel element may contain any number of task elements. You may nest parallel elements.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_parallel|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_parallel|
+ 

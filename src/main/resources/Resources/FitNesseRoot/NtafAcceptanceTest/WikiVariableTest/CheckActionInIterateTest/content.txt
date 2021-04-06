@@ -1,0 +1,23 @@
+조건1 : 반복문 안의 DoFixture의 check는 반복수 만큼 결과를 표출해야 한다.
+
+!|start_iterate|{var : $var$}, {in : 0, 1, 2}, {indexvar : $i$}|
+
+!|setData|$var$|
+
+!|check|returnOutput|$var$|
+
+!|end_iterate|
+
+!|start_iterate|{var : $var$}, {in : 0, 0, 0}, {indexvar : $i$}|
+
+!|check|returnZero|0|
+
+!|end_iterate|
+
+조건2 : 반복문 안의 DoFixture의 check에서 할당을 했을 경우 반복 만큼 할당한 값이 표출 되어야 한다.
+
+!|start_iterate|{var : $var1$}, {in : 0, 1, 2}, {indexvar : $i$}|
+
+!|check|returnOutput|=$var2$|
+
+!|end_iterate|

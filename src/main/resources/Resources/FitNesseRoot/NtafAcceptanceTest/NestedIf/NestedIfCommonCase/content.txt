@@ -1,0 +1,65 @@
+!|FlowFixture|
+
+|command_var|$RC$=0| 
+
+|start_if|{expr: true}| 
+
+|start_if|{expr: true}|
+
+|command_var|$RC$=1|
+
+|end_if|
+
+|end_if|
+
+|start_if|{expr: true}|
+
+|command_var|$RC$=2|
+
+|end_if|
+
+|assertEquals|2|$RC$|
+
+|start_if|{expr: true}|
+
+|command_var|$RC$=3|
+
+|end_if|
+
+|start_elseif|{expr: false}|
+
+|command_var|$RC$=4|
+
+|end_elseif|
+
+|start_else|
+
+|command_var|$RC$=5|
+
+|end_else|
+
+|assertEquals|3|$RC$|
+
+|start_if|{expr: false}|
+
+|command_var|$RC$=6|
+
+|end_if|
+
+|start_elseif|{expr: false}|
+
+|command_var|$RC$=7|
+
+|end_elseif|
+
+|start_else|
+
+|start_if|{expr: true}|
+
+|command_var|$RC$=8|
+
+|end_if|
+
+|end_else|
+
+|assertEquals|8|$RC$|

@@ -1,0 +1,19 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_verifications.html|
+
+!|getValue|theHidden|=$storedHiddenValue$|
+
+!|getText|theSpan|=$storedTextClass$|
+
+!|getTitle|=$storedTitle$|
+
+!|getEval|"Pi ~= " + (Math.round(Math.PI * 100) / 100)|=$javascriptVariable$|
+
+!|open|${URL_PREFIX}test_store_value.html|
+
+!|type|theText|$storedHiddenValue$|
+
+!|getValue|theText|the hidden value|
+
+!|stopTest|

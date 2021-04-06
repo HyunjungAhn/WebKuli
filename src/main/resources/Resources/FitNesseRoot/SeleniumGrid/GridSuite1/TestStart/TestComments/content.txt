@@ -1,0 +1,17 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_verifications.html|
+
+!|getLocation|http://localhost:8082/files/tests/html/test_verifications.html|
+
+!|getValue|name=theText|the text value|
+
+!|getValue|name=theHidden|the hidden value|
+
+!|getText|id=theSpan|this is the span|
+
+!|stopTest|
+
+!|end_iterate|

@@ -1,0 +1,27 @@
+!3 Log
+
+!*****> log: Log a Message in the STAX Job User Log
+
+The log element may be used to log a message in the STAX job user log. The log value and log level must evaluate to a string value. The log element has the following optional attributes:
+
+ * message - is an expression that is captured via the standard output. 
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_iterate|{var: $machName$}, {in: local}, {indexvar: $i$}|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|ping|$machName$|ping|$RC$|PONG||
+
+|start_if|{expr: $i$ == 0}|
+
+|command_log|RC = $RC$ on $machName$, i = $i$|
+
+|end_if|
+
+|end_iterate|

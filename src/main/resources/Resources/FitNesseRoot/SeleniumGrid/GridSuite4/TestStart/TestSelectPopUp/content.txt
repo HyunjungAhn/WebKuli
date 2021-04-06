@@ -1,0 +1,21 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_select_window.html|
+
+!|click|popupPage|
+
+!|waitForPopUp|myPopupWindow||
+
+!|selectPopUp||
+
+!|getLocation|^[\s\S]*/tests/html/test_select_window_popup\.html$|
+
+!|getTitle|Select Window Popup|
+
+!|close|
+
+!|deselectPopUp|
+
+!|getTitle|Select Window Base|
+
+!|stopTest|

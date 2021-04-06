@@ -1,0 +1,17 @@
+!|FlowFixture|
+
+|command_var|$from$=1|
+
+|command_var|$to$=10|
+
+|command_var|$by$=2|
+
+|command_var|$sum$=0|
+
+|start_loop|{var: $i$}, {from: $from$}, {to: $to$}, {by: $by$}|
+
+|command_var|$sum$+=$i$|
+
+|end_loop|
+
+|assertEquals|25|$sum$|

@@ -1,0 +1,35 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}NestedFrames.html|
+
+!|getTitle|NestedFrames|
+
+!|isTextPresent|This is a test|false|
+
+!|selectFrame|mainFrame|
+
+!|getTitle|NestedFrames2|
+
+!|selectFrame|mainFrame|
+
+!|getTitle|AUT|
+
+!|selectFrame|mainFrame|
+
+!|getLocation|^[\s\S]*/tests/html/test_open\.html$|
+
+!|isTextPresent|This is a test|true|
+
+!|selectFrame|relative=top|
+
+!|getTitle|NestedFrames|
+
+!|selectFrame|dom=window.frames[1]|
+
+!|getTitle|NestedFrames2|
+
+!|selectFrame|relative=top|
+
+!|getTitle|NestedFrames|
+
+!|stopTest|

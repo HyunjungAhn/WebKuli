@@ -1,0 +1,27 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_verify_alert.html|
+
+!|isAlertPresent|false|
+
+!|click|id=oneAlert|
+
+!|isAlertPresent|true|
+
+!|getAlert|Store Below 494 degrees K!|
+
+!|click|id=multipleLineAlert|
+
+!|getAlert|This alert spans multiple lines|
+
+!|click|id=alertAndLeave|
+
+!|waitForPageToLoad|3000|
+
+!|getAlert|I'm Melting! I'm Melting!|
+
+!|stopTest|
+
+!|end_iterate|

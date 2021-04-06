@@ -1,0 +1,86 @@
+<script language="javascript">
+	function copyClipboard(id) {
+		inElement=eval(id);
+		var browserName=navigator.appName;
+		if(browserName.search("Explorer")>0) {
+			var range=inElement.createTextRange();
+			range.execCommand('Copy');
+			popdown('applyPatternPopup');
+		} else {
+			alert("Copy it! is supported by Internet Explorer only.");
+		}
+	}
+
+
+	function showContent(obj) {
+		var areaObj = document.frm.content;
+		areaObj.value = obj.value;
+	}
+	
+	function insert() {
+		var value = document.frm.content.value;
+		var position = opener.f.position.value;
+		var p = opener.f.pageContent.value;
+		var before = p.substring(0, position - 1);
+		var after = p.substring(position, p.length);
+		if (position != 0) {
+			opener.f.pageContent.value = before + "\n" + value + after;
+		} else {
+			opener.f.pageContent.value = value;
+		}
+		popdown('applyPatternPopup');
+	}
+	
+	function include() {
+	  for (i = 0; i < document.frm.patternlist.length; i++) {
+	    if (document.frm.patternlist.options[i].selected == true) {
+	      var value = document.frm.patternlist.options[i].outerText;
+	      break;
+	    }
+	  }
+	  var position = opener.f.position.value;
+	  var p = opener.f.pageContent.value;
+		var before = p.substring(0, position - 1);
+		var after = p.substring(position, p.length);
+		opener.f.pageContent.value = before + "\n" + '!include .PatternList.' + value + after;
+		popdown('applyPatternPopup');	  
+	} 
+	
+</script>
+
+<div id="applyPatternPopup" class="popup_window2">
+  <div class="popup_title2">Apply Pattern to $page_name</div>
+  <div class="popup_content2">
+    <form name="frm" id="frm" action="$full_path" method="get">
+      <input type="hidden" name="position" value="0"/>
+      <input type="hidden" name="responder" value="applyPattern"/>
+      <table border="0" cellspacing="0" width="100%" height="100%">
+        <tr>
+          <td>
+            <table border="0" cellspacing="0" width="100%">
+              <tr>
+                <td width="20%"><label for="childName">Pattern List</label></td>
+                <td>
+					$select_context
+				</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+		<tr>
+	 		<td>
+				<textarea id=content cols="90" rows="20" name=content></textarea>
+          	</td>
+		<tr>
+        <tr>
+          <td>
+            <input type="button" value="Cancel" onClick="popdown('applyPatternPopup')"/>
+            <input type="button" value="Copy it!" onClick="copyClipboard(document.frm.content);"/>
+            <input type="button" value="Insert!" onClick="insert()">
+            <input type="button" value="Include!" onClick="include()">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

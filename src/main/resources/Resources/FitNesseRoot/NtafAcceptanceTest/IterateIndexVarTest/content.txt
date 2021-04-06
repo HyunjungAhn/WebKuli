@@ -1,0 +1,23 @@
+!|FlowFixture|
+
+|start_iterate|{var  :$test$}, {in : aaa, bbb, ccc}, {indexvar: $i$}|
+
+|start_if|{expr: $test$ == aaa}|
+
+|assertEquals|0|$i$|
+
+|end_if|
+
+|start_if|{expr: $test$ == bbb}|
+
+|assertEquals|1|$i$|
+
+|end_if|
+
+|start_if|{expr: $test$ == ccc}|
+
+|assertEquals|2|$i$|
+
+|end_if|
+
+|end_iterate|

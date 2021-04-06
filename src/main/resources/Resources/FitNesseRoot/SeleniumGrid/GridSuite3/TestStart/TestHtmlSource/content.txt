@@ -1,0 +1,7 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_html_source.html|
+
+!|getHtmlSource|^[\s\S]*Text is here[\s\S]*$|
+
+!|stopTest|

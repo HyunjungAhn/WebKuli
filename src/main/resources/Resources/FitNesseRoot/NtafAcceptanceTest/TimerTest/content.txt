@@ -1,0 +1,19 @@
+!|FlowFixture|
+
+!|setStartTime|$startTime$|
+
+|start_timer|{duration : 1s}| 
+
+|start_loop|
+
+|end_loop| 
+
+| end_timer |
+
+!|setDuration|$startTime$|$duration$|
+
+|assertTrue|$duration$ >= 1000|
+
+|assertTrue|$duration$ < 1500|
+
+|command_var|$duration$|

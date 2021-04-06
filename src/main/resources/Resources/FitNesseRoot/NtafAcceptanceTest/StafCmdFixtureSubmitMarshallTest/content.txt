@@ -1,0 +1,11 @@
+!|FlowFixture|
+
+*submit() 메서드 확인
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|PROCESS|local|START SHELL COMMAND javac aaa.java bbb.java WAIT|0|||
+
+*submit2() 메서드 확인
+!|StafCmdFixture|
+|service|location|request|submit marshall()|response()|getErrorMessage()|
+|PROCESS|local|START SHELL COMMAND javac aaa.java bbb.java WAIT|0|||

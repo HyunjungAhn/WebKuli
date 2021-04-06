@@ -1,0 +1,12 @@
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_loop|{var: $i$}, {from: 0}, {to: 2}, {by: 1}|
+
+|command_var|$filePrefix$=$id2$ㄹ$i$|
+
+!|command_string|$responseData$|contain|$filePrefix$|
+
+|end_loop|

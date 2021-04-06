@@ -1,0 +1,7 @@
+!|command_string|$var$|regx|regular expression|group no|
+
+!|command_string|$var$|substring|first index|$save_var$|
+
+!|command_string|$var$|substring|first index|end index|$save_var$|
+
+!|command_string|$var$|contain|search string|

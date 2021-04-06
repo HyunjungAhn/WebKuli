@@ -1,0 +1,17 @@
+!|MapParameterTest|
+
+!|putMap|1|first|
+|putMap|2|second|
+|putMap|3|third|
+
+!|check|returnMap|3->third, 2->second, 1->first|
+
+!|check|returnMap|=$map$|
+
+!|command_var|$map$|
+
+!|setMap|$map$|
+
+!|setMap|4->four, 5->five|
+
+!|check|getMap|5->five, 4->four|

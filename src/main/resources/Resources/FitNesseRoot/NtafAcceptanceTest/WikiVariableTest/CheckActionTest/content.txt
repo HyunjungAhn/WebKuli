@@ -1,0 +1,8 @@
+조건1 : check에서 예상 값이 없을 경우에는 단순하게 데이터만 표출해 준다.
+!|check|returnOutput||
+
+조건2 : check에서 예상 값이 있을 경우 성공시에는 녹색으로 성공을, 실패시에는 실제값과 예상값을 표출한다.
+!|check|returnOutput|1|
+
+조건3 : 변수 값을 입력했을 경우 =$var$형태이며, 할당 후 할당된 값을 확인할 수 있어야 한다.
+!|check|returnOutput|=$var$|

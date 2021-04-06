@@ -1,0 +1,14 @@
+!2 !-Fixture Arguments-!
+!-The first row of a FIT table is normally used to initialise the fixture class. In addition to that, you can pass arguments to the fixture by appending cells after the class name in that row. Fixture arguments work very similar to command-line arguments of a -!'''!- main -!'''!- method and they can be accessed using the -!'''!- args -!'''!- array in the fixture. -!
+
+!-You can use this feature to parameterise your fixtures and make them more reusable. For example, arguments allow you to pass parameters to a -!'''!- RowFixture -!'''!-:-!
+
+!|ArgumentsTest|Hello World|Houston We Have a Problem|
+|word|
+|Hello|
+|World|
+|Houston|
+|We|
+|Have|
+|a|
+|Problem|

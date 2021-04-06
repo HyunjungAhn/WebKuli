@@ -1,0 +1,36 @@
+!|FlowFixture|
+
+!4 case1
+|command_var|$RC$=0| 
+
+|start_if| {expr: true}| 
+
+|command_var|$RC$=1|
+
+|end_if| 
+
+|start_else| 
+
+|command_var|$RC$=2| 
+
+|end_else|
+
+|assertEquals|1|$RC$|
+
+
+!4 case2
+|command_var|$RC$=0|
+
+|start_if|{expr: false}| 
+
+|command_var|$RC$=1|
+
+|end_if| 
+
+|start_else| 
+
+|command_var|$RC$=2| 
+
+|end_else|
+
+|assertEquals|2|$RC$|

@@ -1,0 +1,11 @@
+!|startTest|*firefox|${HOST}|
+
+!|open|${URL_PREFIX}test_focus_on_blur.html|
+
+!|type|name=testInput|test|
+
+!|fireEvent|name=testInput|blur|
+
+!|getAlert|Bad value|
+
+!|stopTest|

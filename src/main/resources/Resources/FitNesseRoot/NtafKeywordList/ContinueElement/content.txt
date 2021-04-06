@@ -1,0 +1,44 @@
+!3 Continue
+
+!*****> Continue: Jump to the Top of the Closest Enclosing Loop or Iterate
+
+The continue element may be used to continue to the top of a loop or iterate element.
+**********!
+
+!|com.nhncorp.ntaf.Import|
+|com.nhncorp.ntaf|
+
+!|FlowFixture|
+
+|start_loop|{var: $i$}, {from: 0}, {to: 10}, {by: 1}|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|$RC$|Hello World||
+
+|start_if|{expr: $RC$ != 0}|
+
+|command_continue|
+
+|end_if|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_loop|
+
+!4 New continue expression.
+|start_loop|{var: $i$}, {from: 0}, {to: 2}, {by: 1}|
+
+!|StafCmdFixture|
+|service|location|request|=submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|$RC$|Hello World||
+
+|command_continue|$RC$ == 1|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|ECHO|local|ECHO Hello World|0|Hello World||
+
+|end_loop|

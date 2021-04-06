@@ -1,0 +1,15 @@
+!|start_iterate|{var : $browser$}, {in : *firefox}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}path1/cookie1.html|
+
+!|deleteCookie|testCookieWithSameName|path=/|
+
+!|deleteCookie|addedCookieForPath1|path=http://localhost:8082/files/tests/html/path1/|
+
+!|getCookie||
+
+!|stopTest|
+
+!|end_iterate|

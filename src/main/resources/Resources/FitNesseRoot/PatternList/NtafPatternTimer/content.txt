@@ -1,0 +1,7 @@
+!|start_timer|{duration: 1s}|
+
+!|start_loop||
+
+!|end_loop|
+
+!|end_timer|

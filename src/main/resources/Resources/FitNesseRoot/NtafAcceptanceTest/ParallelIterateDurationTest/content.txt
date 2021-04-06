@@ -1,0 +1,30 @@
+!|FlowFixture|
+
+!|setStartTime|$startTime$|
+
+|start_paralleliterate|{var: $time$}, {in: 200, 300, 500}|
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|DELAY|local|DELAY $time$|0|||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|DELAY|local|DELAY $time$|0|||
+
+!|StafCmdFixture|
+|service|location|request|submit()|response()|getErrorMessage()|
+|DELAY|local|DELAY $time$|0|||
+
+|end_paralleliterate|
+
+
+!|setDuration|$startTime$|$duration$|
+
+|assertTrue|$duration$ >= 1000|
+
+|assertTrue|$duration$ < 1200|
+
+|command_var|$duration$|
+
+|clearSymbols|

@@ -1,0 +1,41 @@
+!|FlowFixture|
+
+|command_var|$COUNT$=0|
+
+|command_var|$iterate_aaa$=false|
+
+|command_var|$iterate_bbb$=false|
+
+|command_var|$iterate_ccc$=false|
+
+|start_iterate|{var  :$test$}, {in : aaa, bbb, ccc}|
+
+|start_if|{expr: $test$ == aaa}|
+
+|command_var|$iterate_aaa$=true|
+
+|end_if|
+
+|start_if|{expr: $test$ == bbb}|
+
+|command_var|$iterate_bbb$=true|
+
+|end_if|
+
+|start_if|{expr: $test$ == ccc}|
+
+|command_var|$iterate_ccc$=true|
+
+|end_if|
+
+|command_var|$COUNT$++|
+
+|end_iterate|
+
+|assertEquals|true|$iterate_aaa$|
+
+|assertEquals|true|$iterate_bbb$|
+
+|assertEquals|true|$iterate_ccc$|
+
+|assertEquals|3|$COUNT$|

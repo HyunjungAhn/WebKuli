@@ -1,0 +1,37 @@
+!|start_iterate|{var : $browser$}, {in : *firefox,*safari}|
+
+!|startTest|$browser$|${HOST}|
+
+!|open|${URL_PREFIX}test_check_uncheck.html|
+
+!|isChecked|id=base-spud|true|
+
+!|isChecked|id=base-rice|false|
+
+!|checked|id=base-rice|
+
+!|isChecked|id=base-spud|false|
+
+!|isChecked|id=base-rice|true|
+
+!|unchecked|id=option-cheese|
+
+!|isChecked|id=option-cheese|false|
+
+!|checked|id=option-onions|
+
+!|isChecked|id=option-onions|true|
+
+!|isChecked|id=option-chilli|false|
+
+!|checked|id=option-chilli|
+
+!|isChecked|id=option-chilli|true|
+
+!|unchecked|option index=3|
+
+!|isChecked|id=option-chilli|false|
+
+!|stopTest|
+
+!|end_iterate|
